@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg4070"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="duck.svg">
+  <defs
+     id="defs4072" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="417.34921"
+     inkscape:cy="528.04155"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="903"
+     inkscape:window-height="819"
+     inkscape:window-x="438"
+     inkscape:window-y="15"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata4075">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer6"
+     inkscape:label="LayerPic"
+     style="display:inline">
+    <image
+       y="196.3622"
+       x="43.571423"
+       id="image4086"
+       xlink:href="file:///G:/Ludum%20Dare/Ludum%20Dare%2028/companion/Assets/images/duck.jpg"
+       height="472"
+       width="610" />
+  </g>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:none">
+    <path
+       style="fill:#f5c31f;fill-opacity:1;stroke:#000000;stroke-width:3.79363656;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;display:inline"
+       d="m 608.88946,373.67782 c -4.77765,9.49027 -72.937,36.94947 -88.93865,42.46443 -13.85095,4.77372 -12.00283,-8.46211 -9.62067,-11.39053 17.55555,-21.58128 49.12193,-51.97661 64.695,-73.27408 10.70147,-14.63515 46.28847,17.52107 33.86432,42.20018 z"
+       id="path4637-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="sssss"
+       inkscape:export-filename="G:\Ludum Dare\Ludum Dare 28\companion\Assets\images\duck.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="matrix(0.99593568,0,0,1.6219525,1.5724371,-412.0574)"
+       style="fill:#f5c31f;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;display:inline"
+       d="m 561.6778,568.43076 c 0,27.05776 -0.39881,49.68556 -30.56108,67.41732 -30.16228,17.73176 -98.20222,25.58508 -144.22829,25.58508 -46.02608,0 -106.9661,-0.37972 -137.12837,-18.11148 -27.95832,-21.53465 -40.36155,-46.54966 -26.85481,-72.81135 2.0668,-4.98232 34.94139,-28.99116 37.6301,-32.7326 2.6887,-3.74144 -20.75138,-22.0923 -17.71511,-23.23224 57.18051,-21.468 38.0082,-21.40391 56.63929,-21.93984 18.6311,-0.53593 25.93898,35.49608 48.5422,36.78525 22.60321,1.28916 44.27336,2.71231 67.2864,2.71231 23.01304,0 51.0224,-22.79299 70.96314,-30.2907 19.94075,-7.4977 21.67011,2.16827 36.75125,11.03415 30.16227,17.73176 38.67528,28.52635 38.67528,55.5841 z"
+       id="path4633"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="sssccssssssss"
+       inkscape:export-filename="G:\Ludum Dare\Ludum Dare 28\companion\Assets\images\duck.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#fac004;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="path4089"
+       sodipodi:cx="279.30719"
+       sodipodi:cy="341.21478"
+       sodipodi:rx="112.63201"
+       sodipodi:ry="94.954338"
+       d="m 391.9392,341.21478 a 112.63201,94.954338 0 1 1 -225.26402,0 112.63201,94.954338 0 1 1 225.26402,0 z"
+       transform="matrix(0.95914397,0,0,1.0898357,-40.611476,-51.361388)"
+       inkscape:export-filename="G:\Ludum Dare\Ludum Dare 28\companion\Assets\images\duck.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#e55412;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="path4601"
+       sodipodi:cx="92.934036"
+       sodipodi:cy="324.04221"
+       sodipodi:rx="39.39595"
+       sodipodi:ry="21.213203"
+       d="m 132.32999,324.04221 a 39.39595,21.213203 0 1 1 -78.791904,0 39.39595,21.213203 0 1 1 78.791904,0 z"
+       transform="matrix(0.91536569,0.40262347,-0.40262347,0.91536569,138.33241,-9.9923346)"
+       inkscape:export-filename="G:\Ludum Dare\Ludum Dare 28\companion\Assets\images\duck.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#e55412;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="path4601-8"
+       sodipodi:cx="92.934036"
+       sodipodi:cy="324.04221"
+       sodipodi:rx="39.39595"
+       sodipodi:ry="21.213203"
+       d="m 132.32999,324.04221 a 39.39595,21.213203 0 1 1 -78.791904,0 39.39595,21.213203 0 1 1 78.791904,0 z"
+       transform="matrix(-0.32747356,0.64608544,-0.621489,-0.38554007,346.01947,439.84847)"
+       inkscape:transform-center-y="-7.2533601"
+       inkscape:transform-center-x="2.4752568"
+       inkscape:export-filename="G:\Ludum Dare\Ludum Dare 28\companion\Assets\images\duck.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline"
+       id="path4623"
+       sodipodi:cx="217.1828"
+       sodipodi:cy="295.25284"
+       sodipodi:rx="36.36549"
+       sodipodi:ry="31.819805"
+       d="m 253.54829,295.25284 a 36.36549,31.819805 0 1 1 -72.73098,0 36.36549,31.819805 0 1 1 72.73098,0 z"
+       transform="matrix(1.4373919,0,0,1.5792416,-89.943245,-131.1217)"
+       inkscape:export-filename="G:\Ludum Dare\Ludum Dare 28\companion\Assets\images\duck.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline"
+       id="path4627"
+       sodipodi:cx="209.60666"
+       sodipodi:cy="352.32648"
+       sodipodi:rx="7.5761442"
+       sodipodi:ry="9.0913725"
+       d="m 217.1828,352.32648 a 7.5761442,9.0913725 0 1 1 -15.15229,0 7.5761442,9.0913725 0 1 1 15.15229,0 z"
+       inkscape:export-filename="G:\Ludum Dare\Ludum Dare 28\companion\Assets\images\duck.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline"
+       id="rect4630"
+       width="78.791901"
+       height="29.294424"
+       x="-17.720255"
+       y="498.11948"
+       transform="matrix(0.85574545,-0.51739706,0.51739706,0.85574545,0,0)"
+       inkscape:transform-center-y="-8.0812204"
+       inkscape:export-filename="G:\Ludum Dare\Ludum Dare 28\companion\Assets\images\duck.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       transform="matrix(0.57039945,0.45470027,-0.35850673,0.72344748,360.58901,-158.83326)"
+       style="fill:#f5c31f;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;display:inline"
+       d="m 571.73991,312.12149 c -0.0939,13.17713 -15.2998,131.20371 -35.38391,131.20371 -20.08411,0 -28.88415,1.67349 -29.31725,-2.90358 -3.10069,-32.76937 -17.50038,-87.37618 5.59089,-122.25237 14.14332,-21.36156 59.35449,-40.31446 59.11027,-6.04776 z"
+       id="path4637"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="sssss"
+       inkscape:export-filename="G:\Ludum Dare\Ludum Dare 28\companion\Assets\images\duck.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#f5c31f;fill-opacity:1;stroke:#000000;stroke-width:3.79363656;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;display:inline"
+       d="m 621.0113,417.1144 c -7.49034,7.53563 -70.9167,25.3327 -82.37267,16.20045 -11.45596,-9.13224 -18.74151,-13.22043 -15.68159,-15.43114 29.17231,-21.0762 57.70823,-26.7228 83.38283,-41.45428 15.7256,-9.023 36.69202,18.53123 14.67143,40.68497 z"
+       id="path4637-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="sssss"
+       inkscape:export-filename="G:\Ludum Dare\Ludum Dare 28\companion\Assets\images\duck.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#f4b91f;fill-opacity:1;stroke:#cb8621;stroke-width:5;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;display:inline"
+       d="m 492.78114,526.00531 c -0.17315,33.1941 -42.64352,70.46121 -94.80641,70.46121 -52.16289,0 -99.8064,-33.69523 -99.8064,-66.88979 0,-8.29864 -11.64282,-35.49018 -6.86343,-42.68093 4.77939,-7.19075 29.55243,-14.38072 38.09841,-19.81907 20.69169,8.91454 41.2185,18.49774 65.35713,19.18164 11.32136,-2.21782 30.22383,-0.44286 57.14287,-11.68164 0,0 28.72767,-13.47544 35.95554,-8.75236 11.00422,7.19075 4.96558,51.8823 4.92229,60.18094 z"
+       id="path4668"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="sssscccss"
+       inkscape:export-filename="G:\Ludum Dare\Ludum Dare 28\companion\Assets\images\duck.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#f4b91f;fill-opacity:1;stroke:#cb8621;stroke-width:5;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;display:inline"
+       d="m 485.82509,545.224 c -8.74458,2.83696 -45.87489,13.05463 -68.73498,11.88979 -13.93509,-0.71008 -65.52068,-13.33809 -79.44925,-25.81836 -6.18055,-5.5379 -38.42854,-45.13304 -33.64915,-52.32379 4.77939,-7.19075 4.90957,-0.80929 13.45555,-6.24764 22.54606,47.2439 98.89737,54.77546 115.71429,48.92857 0,0 52.65624,-22.76116 59.88411,-18.03808 11.00422,7.19075 0.67316,39.04859 -7.22057,41.60951 z"
+       id="path4668-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ssssccss"
+       inkscape:export-filename="G:\Ludum Dare\Ludum Dare 28\companion\Assets\images\duck.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+  </g>
+</svg>
