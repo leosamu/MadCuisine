@@ -67,11 +67,11 @@ public class CarryDuck : MonoBehaviour
 			duckTransform.position = cheft.position;
 			//duckTransform.position += Vector3.up*0.5f;
 			_carriedTime = Time.fixedTime - _pickupTime;
-			Debug.Log ("Carried time:" + _carriedTime);
+			//Debug.Log ("Carried time:" + _carriedTime);
 
 			if(_showDuckWarning) { //an event is going on
 				float warnIncr = (_carriedTime - _lastEventTime);
-				Debug.Log("Warn Incr:" + warnIncr);
+				//Debug.Log("Warn Incr:" + warnIncr);
 				if(warnIncr > _lastEventDuration) {
 				   lastDuckEventFinished();
 				}
