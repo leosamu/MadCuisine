@@ -37,6 +37,8 @@ public class DamagingObject : MonoBehaviour {
 				_enterTime = Time.time;
 				// ... play the pickup sound effect.
 				AudioSource.PlayClipAtPoint(damageDealClip, transform.position);
+				Damageable d = other.gameObject.GetComponent<Damageable>();
+				d.TakeDamage(this);
 			}
 			if(damageFactor == 0.0f) {
 				// Destroy the crate.
@@ -49,18 +51,21 @@ public class DamagingObject : MonoBehaviour {
 		// If the player enters the trigger zone...
 		if(other.tag == "Player" || other.tag == "Duck")
 		{
-			Debug.Log("Damaging!");
 			_active = true;
 			float ctime = Time.time;
 			if( ctime >= _enterTime + _DPSPeriod) {
+				Debug.Log("Damaging!");
 				_enterTime = ctime;
 				//Deal Damage
+				Damageable d = other.gameObject.GetComponent<Damageable>();
+				d.TakeDamage(this);
+
 				AudioSource.PlayClipAtPoint(damageDealClip, transform.position);
-			}
-			if(damageFactor == 0.0f) {
-				// Destroy the crate.
-				Debug.Log("Oh, the irony!");
-				Destroy(transform.root.gameObject);
+				if(damageFactor == 0.0f) {
+					// Destroy the crate.
+					Debug.Log("Oh, the irony!");
+					Destroy(transform.root.gameObject);
+				}
 			}
 		}
 	}

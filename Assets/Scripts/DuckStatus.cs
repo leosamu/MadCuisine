@@ -1,24 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DuckStatus : MonoBehaviour
+public class DuckStatus : Damageable
 {	
-	public float health 	= 100f;					// The player's health.
+//	public float health 	= 100f;					// The player's health.
 	public float doomness	= 0f;					// Time warming up doom effects while held by the player
 
-	public float repeatDamagePeriod = 2f;		// How frequently the player can be damaged.
-	public AudioClip[] ouchClips;				// Array of clips to play when the player is damaged.
+//	public float repeatDamagePeriod = 2f;		// How frequently the player can be damaged.
+//	public AudioClip[] ouchClips;				// Array of clips to play when the player is damaged.
 	public AudioClip[] yellClips;				// Array of clips to play when the player is damaged.
-	public float hurtForce = 10f;				// The force with which the player is pushed when hurt.
-	public float damageAmount = 10f;			// The amount of damage to take when enemies touch the player
+//	public float hurtForce = 10f;				// The force with which the player is pushed when hurt.
+//	public float damageAmount = 10f;			// The amount of damage to take when enemies touch the player
 
-	private SpriteRenderer healthBar;			// Reference to the sprite renderer of the health bar.
-	private float lastHitTime;					// The time at which the player was last hit.
-	private Vector3 healthScale;				// The local scale of the health bar initially (with full health).
+	//private SpriteRenderer healthBar;			// Reference to the sprite renderer of the health bar.
+	//private float lastHitTime;					// The time at which the player was last hit.
+	//private Vector3 healthScale;				// The local scale of the health bar initially (with full health).
 	//private PlayerControl playerControl;		// Reference to the PlayerControl script.
 	private Animator anim;						// Reference to the Animator on the player
 
-
+	/*
 	void Awake ()
 	{
 		// Setting up references.
@@ -27,12 +27,13 @@ public class DuckStatus : MonoBehaviour
 		anim = GetComponent<Animator>();
 
 		// Getting the intial scale of the healthbar (whilst the player has full health).
-		healthScale = healthBar.transform.localScale;
+//		healthScale = healthBar.transform.localScale;
 	}
 
-
+	//*/
 	void OnCollisionEnter2D (Collision2D col)
 	{
+		/*
 		// If the colliding gameobject is an Enemy...
 		if(col.gameObject.tag == "Enemy" || col.gameObject.tag == "DamagingObject")
 		{
@@ -67,7 +68,7 @@ public class DuckStatus : MonoBehaviour
 				}
 			}
 		}
-		else if(col.gameObject.tag == "Player") 	// If the player enters the trigger zone...
+		else*/ if(col.gameObject.tag == "Player") 	// If the player enters the trigger zone...
 		{
 
 			// ... play the pickup sound effect.
@@ -77,7 +78,7 @@ public class DuckStatus : MonoBehaviour
 		}
 	}
 
-
+	/*
 	void TakeDamage (Collision2D damaging)
 	{
 		// Make sure the player can't jump.
@@ -112,4 +113,5 @@ public class DuckStatus : MonoBehaviour
 		// Set the scale of the health bar to be proportional to the player's health.
 		healthBar.transform.localScale = new Vector3(healthScale.x * health * 0.01f, 1, 1);
 	}
+	*/
 }
