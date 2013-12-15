@@ -48,6 +48,8 @@ public class CarryDuck : MonoBehaviour
 		_lastEventTime = 0.0f;
 		_carried = false;
 		_showDuckWarning = false;
+		Transform cheft = GameObject.Find("chefSprite").transform;
+		duckTransform.position = cheft.position + (cheft.position - duckTransform.position) * 1.5f;
 	}
 
 	bool timeIsRightForEvent (float time) {
