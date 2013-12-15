@@ -3,10 +3,10 @@ using System.Collections;
 
 public class PlayerControl : MonoBehaviour
 {
-	[HideInInspector]
-	public bool facingRight = true;			// For determining which way the player is currently facing.
-	[HideInInspector]
-	public bool jump = false;				// Condition for whether the player should jump.
+	//[HideInInspector]
+	//public bool facingRight = true;			// For determining which way the player is currently facing.
+	//[HideInInspector]
+	//public bool jump = false;				// Condition for whether the player should jump.
 
 
 	public float moveForce = 365f;			// Amount of force added to move the player left and right.
@@ -19,12 +19,13 @@ public class PlayerControl : MonoBehaviour
 
 
 	private int tauntIndex;					// The index of the taunts array indicating the most recent taunt.
-	private Transform groundCheck;			// A position marking where to check if the player is grounded.
+//	private Transform groundCheck;			// A position marking where to check if the player is grounded.
 	private Transform sprite;
-	private bool grounded = false;			// Whether or not the player is grounded.
+//	private bool grounded = false;			// Whether or not the player is grounded.
 	private Animator anim;					// Reference to the player's animator component.
 	private Vector2	_speed;
 	//private Transform	_prevTransform;
+	private bool _ICanHasDuck = false;
 
 
 	void Awake()
@@ -32,15 +33,20 @@ public class PlayerControl : MonoBehaviour
 		// Setting up references.
 		if(maxSpeed.magnitude < 0.01f)
 			maxSpeed.x = 2f; maxSpeed.y = 2f;
-		groundCheck = transform.Find("groundCheck");
+//		groundCheck = transform.Find("groundCheck");
 		sprite = transform.Find ("chefSprite");
 	//	_prevTransform = sprite;
 		anim = GetComponent<Animator>();
+		Random.seed = 69;
 	}
 
+	public void canHasDuck() {
+		_ICanHasDuck = true;
+	}
 
 	void Update()
 	{
+		/*
 		// The player is grounded if a linecast to the groundcheck position hits anything on the ground layer.
 		grounded = Physics.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
 		if(!grounded) {
@@ -51,6 +57,10 @@ public class PlayerControl : MonoBehaviour
 		// If the jump button is pressed and the player is grounded then the player should jump.
 		if(Input.GetButtonDown("Jump") && grounded)
 			jump = true;
+		*/
+		if(Input.GetButtonDown("Fire1") && _ICanHasDuck) {
+			GetComponent<CarryDuck>().hasDuck();
+		}
 	}
 
 
@@ -86,12 +96,12 @@ public class PlayerControl : MonoBehaviour
 		if(sn.magnitude > 0.1f) {
 			float angle = 90.0f + Mathf.Atan2(sn.y, sn.x)*180.0f/Mathf.PI;
 			//	Vector2.Angle(_speed.normalized, Vector2.up);
-			Debug.Log("Speed: " + _speed + " Angle: " + angle);
+			//Debug.Log("Speed: " + _speed + " Angle: " + angle);
 			//angle = Mathf.Lerp(sprite.rotation.z, angle, Time.deltaTime);
 			sprite.rotation = Quaternion.Euler (0, 0, angle);
 		}
 
-
+		/*
 		// If the player should jump...
 		if(jump)
 		{
@@ -108,11 +118,14 @@ public class PlayerControl : MonoBehaviour
 			// Make sure the player can't jump again until the jump conditions from Update are satisfied.
 			jump = false;
 		}
+		*/
 	}
 
 	void LateUpdate(){
+		_ICanHasDuck = false;
 	}
-	
+
+	/*
 	void Flip ()
 	{
 		// Switch the way the player is labelled as facing.
@@ -123,7 +136,7 @@ public class PlayerControl : MonoBehaviour
 		theScale.x *= -1;
 		transform.localScale = theScale;
 	}
-
+	*/
 
 	public IEnumerator Taunt()
 	{
