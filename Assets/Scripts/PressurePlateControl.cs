@@ -27,7 +27,7 @@ public class PressurePlateControl : MonoBehaviour
 
 	void Update () {
 		//_active = false;
-		Debug.Log ("Plate State:" + _active.ToString());
+		//Debug.Log ("Plate State:" + _active.ToString());
 	}
 
 	void OnTriggerEnter2D (Collider2D other)
@@ -57,6 +57,19 @@ public class PressurePlateControl : MonoBehaviour
 			landed = true;		
 		}
 		*/
+	}
+	
+	
+	void OnTriggerStay2D (Collider2D other)
+	{
+		if(other.tag == "Player" || other.tag == "Duck")
+		{
+			if(!_active)
+			{
+				_active = true;
+				GetComponent<SpriteRenderer>().sprite = spriteON;
+			}
+		}
 	}
 
 	void OnTriggerExit2D (Collider2D other)
