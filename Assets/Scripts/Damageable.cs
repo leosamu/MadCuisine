@@ -87,8 +87,10 @@ public class Damageable : MonoBehaviour
 		UpdateHealthBar();
 		
 		// Play a random clip of the player getting hurt.
-		int i = Random.Range (0, ouchClips.Length);
-		AudioSource.PlayClipAtPoint(ouchClips[i], transform.position);
+		if( ouchClips.Length > 0) {
+			int i = Random.Range (0, ouchClips.Length);
+			AudioSource.PlayClipAtPoint(ouchClips[i], transform.position);
+		}
 	}
 
 	public void UpdateHealthBar ()
