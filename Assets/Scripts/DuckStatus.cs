@@ -89,10 +89,11 @@ public class DuckStatus : MonoBehaviour
 		DamagingObject d = damaging.gameObject.GetComponent<DamagingObject>();
 		// Add a force to the player in the direction of the vector and multiply by the hurtForce.
 
-		rigidbody2D.AddForce(hurtVector * hurtForce * d.damageFactor);
+		float damageReceived = d.DealDamage();
+		rigidbody2D.AddForce(hurtVector * hurtForce * damageReceived);
 
 		// Reduce the player's health by 10.
-		health -= d.DealDamage();
+		health -= damageReceived;
 
 		// Update what the health bar looks like.
 		UpdateHealthBar();
