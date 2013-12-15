@@ -42,21 +42,7 @@ public class PressurePlateControl : MonoBehaviour
 				AudioSource.PlayClipAtPoint(switchClip, transform.position);
 			}
 			GetComponent<SpriteRenderer>().sprite = spriteON;
-
-			// Destroy the crate.
-			//Destroy(transform.root.gameObject);
 		}
-		/*
-		// Otherwise if the crate lands on the ground...
-		else if(other.tag == "ground" && !landed)
-		{
-			// ... set the animator trigger parameter Land.
-			anim.SetTrigger("Land");
-			transform.parent = null;
-			gameObject.AddComponent<Rigidbody2D>();
-			landed = true;		
-		}
-		*/
 	}
 	
 	
