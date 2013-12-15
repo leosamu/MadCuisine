@@ -90,7 +90,7 @@ public class PlayerControl : MonoBehaviour
 		_speed = rigidbody2D.velocity;
 		Vector2 sn = _speed.normalized;
 		if(sn.magnitude > 0.1f) {
-			float angle = 90.0f + Mathf.Atan2(sn.y, sn.x)*180.0f/Mathf.PI;
+			float angle = 270.0f + Mathf.Atan2(sn.y, sn.x)*180.0f/Mathf.PI;
 			//	Vector2.Angle(_speed.normalized, Vector2.up);
 			//Debug.Log("Speed: " + _speed + " Angle: " + angle);
 			//angle = Mathf.Lerp(sprite.rotation.z, angle, Time.deltaTime);

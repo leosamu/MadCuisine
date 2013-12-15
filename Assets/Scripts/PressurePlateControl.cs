@@ -6,21 +6,25 @@ public class PressurePlateControl : MonoBehaviour
 	public AudioClip switchClip;		// Sound for when the bomb crate is picked up.
 
 
-	private SpriteRenderer spriteON, spriteOFF;
-	private bool active = false;
+	private Sprite spriteON, spriteOFF;
+	private bool _active = false;
 
 	void Awake()
 	{
-		// Setting up the reference.
-		spriteOFF = transform.Find("pressPlateOFFSprite").gameObject;
-		spriteON = transform.Find("pressPlateONSprite").gameObject;
-		spriteOFF.sortingOrder = 1;
+		Object pressPlateStates = Resources.Load("pressure-plate_0");
+		Debug.Log("Object loaded:" + pressPlateStates.ToString());
+		Sprite pressPlateState = Resources.Load<Sprite>("pressure-plate.png");
+		//Sprite[] pressPlateStates = Resources.LoadAll<Sprite>("Art/Objects/pressure-plate");
+		spriteOFF = pressPlateState;
+		//spriteON = pressPlateStates[1];
+		//spriteOFF = Resources.Load<Sprite>("Art/Objects/pressure-plate_0");
+		//spriteON = Resources.Load<Sprite>("Art/Objects/pressure-plate_1");
+		GetComponent<SpriteRenderer>().sprite = spriteOFF;
 	}
 
 	void FixedUpdate () {
-		active = false;
-		spriteON.sortingOrder = 0;
-		spriteOFF.sortingOrder = 1;
+		_active = false;
+		GetComponent<SpriteRenderer>().sprite = spriteOFF;
 	}
 
 	void OnTriggerEnter2D (Collider2D other)
@@ -28,15 +32,12 @@ public class PressurePlateControl : MonoBehaviour
 		// If the player enters the trigger zone...
 		if(other.tag == "Player" || other.tag == "Duck")
 		{
-			if(!active)
+			if(!_active)
 			{
 				// ... play the pickup sound effect.
 				AudioSource.PlayClipAtPoint(switchClip, transform.position);
-				// Increase the number of bombs the player has.
-				spriteON.sortingOrder = 1;
-				spriteOFF.sortingOrder = 0;
-				active = true;
 			}
+			GetComponent<SpriteRenderer>().sprite = spriteON;
 
 			// Destroy the crate.
 			//Destroy(transform.root.gameObject);
