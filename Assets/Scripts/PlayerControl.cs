@@ -25,8 +25,8 @@ public class PlayerControl : MonoBehaviour
 	private Animator anim;					// Reference to the player's animator component.
 	private Vector2	_speed;
 	//private Transform	_prevTransform;
-	private bool _ICanHasDuck = false;
-	private bool _playerHasDuck = false;
+	public bool _ICanHasDuck = false;
+	public bool _playerHasDuck = false;
 
 
 	void Awake()
@@ -47,7 +47,7 @@ public class PlayerControl : MonoBehaviour
 
 	void Update()
 	{
-		if(Input.GetButtonDown("Fire1") && _ICanHasDuck) {
+		if(Input.GetButtonDown("Fire1") && (_ICanHasDuck || _playerHasDuck)) {
 			if(!_playerHasDuck) {
 				GetComponent<CarryDuck>().hasDuck();
 				_playerHasDuck = true;

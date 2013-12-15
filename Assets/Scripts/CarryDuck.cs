@@ -60,9 +60,11 @@ public class CarryDuck : MonoBehaviour
 
 	void FixedUpdate() {		
 		duckWarning.enabled = _showDuckWarning;
+		duckTransform.collider2D.enabled=true;
 		if(_carried) {
 			Transform cheft = GameObject.Find("chefSprite").transform;
-			duckTransform.position = cheft.position + Vector3.up*0.5f + Vector3.back;
+			duckTransform.collider2D.enabled=false;
+			duckTransform.position = cheft.position;
 			//duckTransform.position += Vector3.up*0.5f;
 			_carriedTime = Time.fixedTime - _pickupTime;
 			Debug.Log ("Carried time:" + _carriedTime);
