@@ -16,7 +16,7 @@ public class CarryDuck : MonoBehaviour
 	private float _lastEventDuration;
 
 	public float 	duckEventInterval = 5.0f;
-
+	public Transform duckTransform;
 	private bool _showDuckWarning = false;
 	private Color _duckWarningColor;
 	private Vector3 _duckWarningPos;
@@ -38,8 +38,16 @@ public class CarryDuck : MonoBehaviour
 		// ... play the pickup sound effect.
 		AudioSource.PlayClipAtPoint(pickupClip, transform.position);
 		_pickupTime = Time.time;
-		_lastEventTime = _pickupTime;
+		_lastEventTime = 0.0f;
 		_carried = true;
+	}
+	
+	public void noHasDuck(){
+		// ... play the pickup sound effect.
+		AudioSource.PlayClipAtPoint(pickupClip, transform.position);
+		_lastEventTime = 0.0f;
+		_carried = false;
+		_showDuckWarning = false;
 	}
 
 	bool timeIsRightForEvent (float time) {
@@ -50,28 +58,37 @@ public class CarryDuck : MonoBehaviour
 		return false;
 	}
 
-	void FixedUpdate() {
-		if(_showDuckWarning) { //an event is going on
-			if(Time.fixedTime > (_lastEventTime + _lastEventDuration)) {
-			   lastDuckEventFinished();
-			}
-			else {
-				float warnIncr = (Time.fixedTime - _lastEventTime);
-				warnIncr = warnIncr >= 1.0f ? warnIncr - 1.0f : warnIncr;
-				_duckWarningColor.a = warnIncr;			
-				duckWarning.color = _duckWarningColor;
-				_duckWarningPos.y = -0.5f + warnIncr;
-				duckWarning.transform.position = _duckWarningPos;
-
-			}
-		}
-		else if(_carried) {
+	void FixedUpdate() {		
+		duckWarning.enabled = _showDuckWarning;
+		if(_carried) {
+			Transform cheft = GameObject.Find("chefSprite").transform;
+			duckTransform.position = cheft.position + Vector3.up*0.5f + Vector3.back;
+			//duckTransform.position += Vector3.up*0.5f;
 			_carriedTime = Time.fixedTime - _pickupTime;
-			if ( timeIsRightForEvent( _carriedTime) ) {
+			Debug.Log ("Carried time:" + _carriedTime);
+
+			if(_showDuckWarning) { //an event is going on
+				float warnIncr = (_carriedTime - _lastEventTime);
+				Debug.Log("Warn Incr:" + warnIncr);
+				if(warnIncr > _lastEventDuration) {
+				   lastDuckEventFinished();
+				}
+				else {
+					warnIncr = warnIncr / (2.0f*_lastEventDuration);
+					_duckWarningColor.a = 0.5f + warnIncr;
+					duckWarning.color = _duckWarningColor;
+					_duckWarningPos = Camera.main.WorldToViewportPoint(duckTransform.position);
+					_duckWarningPos.y = _duckWarningPos.y - 0.25f + warnIncr;
+					duckWarning.transform.position = _duckWarningPos;
+					//Debug.Log("DuckW: " + duckWarning.color.ToString() + " Pos: " + duckWarning.transform.position);
+				}
+			}
+			else if ( timeIsRightForEvent( _carriedTime) ) {
 				_showDuckWarning = true;
 				launchDuckEvent ( Random.value);
 			}
 		}
+		//what if we are not carrying the duck?
 	}
 
 	void lastDuckEventFinished() {
@@ -83,7 +100,8 @@ public class CarryDuck : MonoBehaviour
 	}
 
 	void launchArmageddon() {
-		_lastEventDuration = 5.0f; //esto dentro de cada evento
+		_lastEventDuration = 3.0f; //esto dentro de cada evento
+		Debug.Log ("Armageddon Launched!!!");
 	}
 
 	bool launchDuckEvent(float value) {

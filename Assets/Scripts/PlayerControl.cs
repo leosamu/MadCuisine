@@ -26,6 +26,7 @@ public class PlayerControl : MonoBehaviour
 	private Vector2	_speed;
 	//private Transform	_prevTransform;
 	private bool _ICanHasDuck = false;
+	private bool _playerHasDuck = false;
 
 
 	void Awake()
@@ -46,20 +47,15 @@ public class PlayerControl : MonoBehaviour
 
 	void Update()
 	{
-		/*
-		// The player is grounded if a linecast to the groundcheck position hits anything on the ground layer.
-		grounded = Physics.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
-		if(!grounded) {
-			Debug.Log ("Player:" + transform.position);
-			Debug.Log ("GroundCheck:" + groundCheck.position);
-			Debug.Log ("Player is not on the Ground");
-		}
-		// If the jump button is pressed and the player is grounded then the player should jump.
-		if(Input.GetButtonDown("Jump") && grounded)
-			jump = true;
-		*/
 		if(Input.GetButtonDown("Fire1") && _ICanHasDuck) {
-			GetComponent<CarryDuck>().hasDuck();
+			if(!_playerHasDuck) {
+				GetComponent<CarryDuck>().hasDuck();
+				_playerHasDuck = true;
+			}
+			else{
+				GetComponent<CarryDuck>().noHasDuck();
+				_playerHasDuck = false;
+			}
 		}
 	}
 
