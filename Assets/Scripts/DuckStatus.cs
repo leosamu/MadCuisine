@@ -34,7 +34,7 @@ public class DuckStatus : MonoBehaviour
 	void OnCollisionEnter2D (Collision2D col)
 	{
 		// If the colliding gameobject is an Enemy...
-		if(col.gameObject.tag == "Enemy" || col.gameObject.tag == "HurtingObject")
+		if(col.gameObject.tag == "Enemy" || col.gameObject.tag == "DamagingObject")
 		{
 			// ... and if the time exceeds the time of the last hit plus the time between hits...
 			if (Time.time > lastHitTime + repeatDamagePeriod)
@@ -62,13 +62,6 @@ public class DuckStatus : MonoBehaviour
 					{
 						s.sortingLayerName = "GUI";
 					}
-
-					// ... disable user Player Control script
-					GetComponent<PlayerControl>().enabled = false;
-
-					// ... disable the Gun script to stop a dead guy shooting a nonexistant bazooka
-					GetComponentInChildren<Gun>().enabled = false;
-
 					// ... Trigger the 'KABOOM' animation state
 					anim.SetTrigger("KABOOM");
 				}
@@ -85,19 +78,21 @@ public class DuckStatus : MonoBehaviour
 	}
 
 
-	void TakeDamage (Collision2D hurtful)
+	void TakeDamage (Collision2D damaging)
 	{
 		// Make sure the player can't jump.
 //		playerControl.jump = false;
 
 		// Create a vector that's from the enemy to the player with an upwards boost.
-		Vector3 hurtVector = transform.position - hurtful.transform.position + Vector3.up * 5f;
+		Vector3 hurtVector = transform.position - damaging.transform.position + Vector3.up * 5f;
 
+		DamagingObject d = damaging.gameObject.GetComponent<DamagingObject>();
 		// Add a force to the player in the direction of the vector and multiply by the hurtForce.
-		rigidbody2D.AddForce(hurtVector * hurtForce);
+
+		rigidbody2D.AddForce(hurtVector * hurtForce * d.damageFactor);
 
 		// Reduce the player's health by 10.
-		health -= damageAmount;
+		health -= d.DealDamage();
 
 		// Update what the health bar looks like.
 		UpdateHealthBar();

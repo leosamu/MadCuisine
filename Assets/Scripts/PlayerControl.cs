@@ -47,7 +47,7 @@ public class PlayerControl : MonoBehaviour
 
 	void Update()
 	{
-		if(Input.GetButtonDown("Fire1") && (_ICanHasDuck || _playerHasDuck)) {
+		if(Input.GetButtonUp("Fire1") && (_ICanHasDuck || _playerHasDuck)) {
 			if(!_playerHasDuck) {
 				GetComponent<CarryDuck>().hasDuck();
 				_playerHasDuck = true;

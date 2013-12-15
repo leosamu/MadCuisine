@@ -30,8 +30,10 @@ public class PlayerHealth : MonoBehaviour
 
 	void OnCollisionEnter2D (Collision2D col)
 	{
+		
+		Debug.Log ("Player collision");
 		// If the colliding gameobject is an Enemy...
-		if(col.gameObject.tag == "Enemy" || col.gameObject.tag == "HurtingObject")
+		if(col.gameObject.tag == "Enemy" || col.gameObject.tag == "DamagingObject")
 		{
 			// ... and if the time exceeds the time of the last hit plus the time between hits...
 			if (Time.time > lastHitTime + repeatDamagePeriod) 
@@ -74,23 +76,27 @@ public class PlayerHealth : MonoBehaviour
 	}
 
 
-	void TakeDamage (Collision2D hurtful)
+	void TakeDamage (Collision2D damaging)
 	{
 		// Make sure the player can't jump.
-//		playerControl.jump = false;
-
+		//		playerControl.jump = false;
+		
+		Debug.Log ("Taking damage");
 		// Create a vector that's from the enemy to the player with an upwards boost.
-		Vector3 hurtVector = transform.position - hurtful.transform.position + Vector3.up * 5f;
-
+		Vector3 hurtVector = transform.position - damaging.transform.position + Vector3.up * 5f;
+		
+		DamagingObject d = damaging.gameObject.GetComponent<DamagingObject>();
 		// Add a force to the player in the direction of the vector and multiply by the hurtForce.
-		rigidbody2D.AddForce(hurtVector * hurtForce);
-
+				
+		float damageReceived = d.DealDamage();
+		rigidbody2D.AddForce(hurtVector * hurtForce * damageReceived);
+		
 		// Reduce the player's health by 10.
-		health -= damageAmount;
-
+		health -= damageReceived;
+		
 		// Update what the health bar looks like.
 		UpdateHealthBar();
-
+		
 		// Play a random clip of the player getting hurt.
 		int i = Random.Range (0, ouchClips.Length);
 		AudioSource.PlayClipAtPoint(ouchClips[i], transform.position);
