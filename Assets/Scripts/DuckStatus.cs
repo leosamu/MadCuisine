@@ -70,7 +70,7 @@ public class DuckStatus : Damageable
 		}
 		else*/ if(col.gameObject.tag == "Player") 	// If the player enters the trigger zone...
 		{
-
+			Debug.Log("Player can has Duck" + col.ToString());
 			// ... play the pickup sound effect.
 			//AudioSource.PlayClipAtPoint(pickupClip, transform.position);
 
@@ -78,6 +78,11 @@ public class DuckStatus : Damageable
 		}
 	}
 
+	void OnCollisionExit2D (Collision2D col)
+	{
+		if(col.gameObject.tag == "Player") 	// If the player enters the trigger zone...
+			col.gameObject.GetComponent<PlayerControl>().noCanHasDuck();
+	}
 	/*
 	void TakeDamage (Collision2D damaging)
 	{

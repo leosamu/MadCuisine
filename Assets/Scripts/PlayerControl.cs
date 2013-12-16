@@ -25,8 +25,8 @@ public class PlayerControl : MonoBehaviour
 	private Animator anim;					// Reference to the player's animator component.
 	private Vector2	_speed;
 	//private Transform	_prevTransform;
-	private bool _ICanHasDuck = false;
-	private bool _playerHasDuck = false;
+	public bool _ICanHasDuck = false;
+	public bool _playerHasDuck = false;
 
 
 	void Awake()
@@ -43,6 +43,10 @@ public class PlayerControl : MonoBehaviour
 
 	public void canHasDuck() {
 		_ICanHasDuck = true;
+	}
+	
+	public void noCanHasDuck() {
+		_ICanHasDuck = false;
 	}
 
 	void Update()
@@ -118,7 +122,7 @@ public class PlayerControl : MonoBehaviour
 	}
 
 	void LateUpdate(){
-		_ICanHasDuck = false;
+		//_ICanHasDuck = false;
 	}
 
 	/*
