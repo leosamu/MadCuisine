@@ -14,9 +14,9 @@ public class LevelComplete : MonoBehaviour {
 		
 	}
 
-	void OnCollisionEnter2D (Collision2D col)
+	void OnTriggerEnter2D (Collider2D col)
 	{
-		if(col.gameObject.tag == "Duck")
+		if(col.tag == "Duck")
 		{
 			levelFinished = true;				
 			GameObject.Find("Chef").GetComponent<PlayerControl>().enabled = false;

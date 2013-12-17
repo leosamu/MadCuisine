@@ -20,6 +20,8 @@ public class CarryDuck : MonoBehaviour
 	private bool _showDuckWarning = false;
 	private Color _duckWarningColor;
 	private Vector3 _duckWarningPos;
+
+	private bool _duckdropped = false;
 		
 	void Awake()
 	{
@@ -40,6 +42,8 @@ public class CarryDuck : MonoBehaviour
 		_pickupTime = Time.time;
 		_lastEventTime = 0.0f;
 		_carried = true;
+		Transform cheft = GameObject.Find("chefSprite").transform;
+		duckTransform.position = cheft.position;
 	}
 	
 	public void noHasDuck(){
@@ -48,6 +52,8 @@ public class CarryDuck : MonoBehaviour
 		_lastEventTime = 0.0f;
 		_carried = false;
 		_showDuckWarning = false;
+		_duckdropped = true;
+
 		Transform cheft = GameObject.Find("chefSprite").transform;
 		duckTransform.position = cheft.position + (cheft.position - duckTransform.position) * 1.5f;
 	}
@@ -60,12 +66,18 @@ public class CarryDuck : MonoBehaviour
 		return false;
 	}
 
-	void FixedUpdate() {		
+	void FixedUpdate() {
+		if(_carried){
+			duckTransform.collider2D.enabled=false;	
+		}
+		else if(_duckdropped) {			
+			duckTransform.collider2D.enabled=true;
+			_duckdropped = false;
+		}
 		duckWarning.enabled = _showDuckWarning;
-		duckTransform.collider2D.enabled=true;
+		//duckTransform.collider2D.enabled=true;
 		if(_carried) {
 			Transform cheft = GameObject.Find("chefSprite").transform;
-			duckTransform.collider2D.enabled=false;
 			duckTransform.position = cheft.position;
 			//duckTransform.position += Vector3.up*0.5f;
 			_carriedTime = Time.fixedTime - _pickupTime;
@@ -92,7 +104,9 @@ public class CarryDuck : MonoBehaviour
 				launchDuckEvent ( Random.value);
 			}
 		}
-		//what if we are not carrying the duck?
+		//what if we are not carrying the duck? Random movement, more yelling, etc. 
+	}
+	void LateUpdate() {
 	}
 
 	void lastDuckEventFinished() {

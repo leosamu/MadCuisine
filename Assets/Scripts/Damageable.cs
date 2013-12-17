@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Damageable : MonoBehaviour
+public abstract class Damageable : MonoBehaviour
 {	
 	public float health = 100f;					// The entity's health.
 	public float repeatDamagePeriod = 2f;		// How frequently the entity can be damaged.
