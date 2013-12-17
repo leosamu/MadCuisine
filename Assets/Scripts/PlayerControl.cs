@@ -28,6 +28,8 @@ public class PlayerControl : MonoBehaviour
 	public bool _ICanHasDuck = false;
 	public bool _playerHasDuck = false;
 
+	public float h,v;						//vertical and horizontal input controls
+	public bool  f1;						//fire1 input control
 
 	void Awake()
 	{
@@ -66,10 +68,14 @@ public class PlayerControl : MonoBehaviour
 
 	void FixedUpdate ()
 	{
+		//Debug.Log(h);
 		// Cache the horizontal input
-		float h = Input.GetAxis("Horizontal");
-		float v = Input.GetAxis("Vertical");
+		#if UNITY_EDITOR || UNITY_STANDALONE_WIN
+			h = Input.GetAxis("Horizontal");
+			v = Input.GetAxis("Vertical");
+		#endif
 
+		//Debug.Log(h);
 		_speed.x = h;
 		_speed.y = v;
 		// The Speed animator parameter is set to the absolute value of the horizontal input.
